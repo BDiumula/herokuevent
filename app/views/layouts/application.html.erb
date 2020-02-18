@@ -31,12 +31,12 @@
         <li class="nav-item">
           <a class="nav-link" href="<%=new_event_path%>">Créer un event</a>
         </li>
-        <%if session[:user_id]%>
+        <%if user_signed_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="<%=user_path%>">Ton profil</a>
+          <a class="nav-link" href="#">Ton profil</a>
         </li>
         <li class="nav-item">
-          <ul class="nav-link"><%= link_to "Se déconnecter", destroy_user_session_path %></ul>
+          <ul class="nav-link"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></ul>
         </li>
         <% else %>
         <li class="nav-item dropdown">
