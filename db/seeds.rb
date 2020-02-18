@@ -12,5 +12,13 @@ User.destroy_all
 
 
 10.times do
-  User.create(email: Faker::Internet.unique.email(domain: 'yopmail.com'), encrypted_password: Faker::Food.fruits, description: Faker::ChuckNorris.fact, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+  User.create!(email: Faker::Internet.unique.email(domain: 'yopmail.com'), password: Faker::Lorem.characters(number: 10), description: Faker::ChuckNorris.fact, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+end
+
+10.times do
+  Event.create!(start_date: Faker::Time.between_dates(from: Date.today, to: Date.today + 357, period: :day), duration:Faker::Time.forward(days: 23, period: :morning) ,title:Faker::Company.buzzword , description:Faker::Lorem.paragraph , price:Faker::Commerce.price  ,location:Faker::Address.city, user_id: User.all.sample)
+end
+
+10.times do
+  Attendance.create!(stripe_customer_id: "BLABLABLA", user_id: User.all.sample, attendance_id: User.all.sample)
 end
