@@ -33,10 +33,10 @@
         </li>
         <%if session[:user_id]%>
         <li class="nav-item">
-          <a class="nav-link" href="<%=  ////  %>">Ton profil</a>
+          <a class="nav-link" href="<%=user_path%>">Ton profil</a>
         </li>
         <li class="nav-item">
-          <ul class="nav-link"><%= link_to "Se déconnecter", session_path(session.id), method: :delete %></ul>
+          <ul class="nav-link"><%= link_to "Se déconnecter", destroy_user_session_path %></ul>
         </li>
         <% else %>
         <li class="nav-item dropdown">
@@ -44,8 +44,8 @@
             S'inscrire / Se connecter
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="<%=  ////  %>">S'inscrire</a>
-            <a class="dropdown-item" href="<%=  ////  %>">Se connecter</a>
+            <a class="dropdown-item" href="<%=new_user_registration_path%>">S'inscrire</a>
+            <a class="dropdown-item" href="<%=new_user_session_path%>">Se connecter</a>
           </div>
           <% end %>
         </li>
@@ -60,10 +60,6 @@
         <% if flash[:danger]%>
         <div class="alert alert-danger"><%= flash[:danger]%></dir>
           <%end%>
-
-
-
-
 
 
   <%= yield %>
