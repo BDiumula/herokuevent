@@ -20,5 +20,5 @@ end
 end
 
 10.times do
-  Attendance.create!(stripe_customer_id: "BLABLABLA", user_id: User.all.sample, attendance_id: User.all.sample)
+  Attendance.create!(stripe_customer_id: "BLABLABLA", user: User.all.sample, event: Event.all.sample)
 end

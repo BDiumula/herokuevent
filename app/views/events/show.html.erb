@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Bienvenue sur Eventbride by THP</title>
+  </head>
+  <body>
+    <h1>Evènement n°<%= @event.id %></h1><br>
+   	<p><b>Titre de l'évènement : </b><%= @event.title %></p>
+    <p><b>Description : </b><%= @event.description %></p>
+    <button type="button" class="btn btn-outline-info"><a href="<%= events_path %>"> Revenir sur la page accueil</a></button>
+
+  </body>
+</html>
